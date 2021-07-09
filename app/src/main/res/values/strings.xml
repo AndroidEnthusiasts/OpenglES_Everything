@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OpenGLES</string>
+    <string name="gotoviewactivity">goToViewActivity</string>
+    <string name="goToCameraActivity">goToCameraActivity</string>
+</resources>
