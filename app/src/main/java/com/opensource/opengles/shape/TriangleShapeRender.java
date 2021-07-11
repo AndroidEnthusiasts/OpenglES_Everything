@@ -72,8 +72,8 @@ public class TriangleShapeRender extends BaseViewGLRender  {
         String vertexShaderCode = GLESUtils.readAssetShaderCode(context, Vertext_Shader_file);
         String fragmentShaderCode = GLESUtils.readAssetShaderCode(context, Fragment_Shader_file);
         //编译shader
-        int vertexShaderObjectId = GLESUtils.compileShaderCode(GLES20.GL_VERTEX_SHADER, vertexShaderCode);
-        int fragmentShaderObjectId = GLESUtils.compileShaderCode(GLES20.GL_FRAGMENT_SHADER, fragmentShaderCode);
+        int vertexShaderObjectId = GLESUtils.compileShaderCode(GLES20.GL_VERTEX_SHADER, vertexShaderCode,Constant.GLES_VERSION_2);
+        int fragmentShaderObjectId = GLESUtils.compileShaderCode(GLES20.GL_FRAGMENT_SHADER, fragmentShaderCode,Constant.GLES_VERSION_2);
 
         mProgramObjectId = GLES20.glCreateProgram();
         //attach

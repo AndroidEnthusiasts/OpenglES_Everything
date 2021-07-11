@@ -158,8 +158,8 @@ public class CircleShapeRender extends BaseViewGLRender{
 
         String vertexShaderCode = GLESUtils.readAssetShaderCode(context, VERTEX_SHADER_FILE);
         String fragmentShaderCode = GLESUtils.readAssetShaderCode(context, FRAGMENT_SHADER_FILE);
-        int vertexShaderObjectId = GLESUtils.compileShaderCode(GLES20.GL_VERTEX_SHADER, vertexShaderCode);
-        int fragmentShaderObjectId = GLESUtils.compileShaderCode(GLES20.GL_FRAGMENT_SHADER, fragmentShaderCode);
+        int vertexShaderObjectId = GLESUtils.compileShaderCode(GLES20.GL_VERTEX_SHADER, vertexShaderCode,Constant.GLES_VERSION_2);
+        int fragmentShaderObjectId = GLESUtils.compileShaderCode(GLES20.GL_FRAGMENT_SHADER, fragmentShaderCode,Constant.GLES_VERSION_2);
 
         mProgramObjectId = GLES20.glCreateProgram();
         GLES20.glAttachShader(mProgramObjectId, vertexShaderObjectId);
