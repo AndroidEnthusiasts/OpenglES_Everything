@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, ViewActivity.class);
             startActivity(intent);
         });
-        findViewById(R.id.btn_1).setOnClickListener(v -> {
+        findViewById(R.id.btn_2).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CameraActivity.class);
             startActivity(intent);
         });

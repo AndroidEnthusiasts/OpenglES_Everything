@@ -18,6 +18,7 @@ public class GLESUtils {
      * open gl 2的版本
      */
     private static final int GLES_VERSION_2 = 0x20000;
+    private static final int GLES_VERSION_3 = 0x30000;
 
     /**
      * 判断是否支持es2.0
