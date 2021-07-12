@@ -9,6 +9,7 @@ import android.view.Display;
 
 import com.opensource.opengles.camera.CameraActivity;
 import com.opensource.opengles.render.ViewActivity;
+import com.opensource.opengles.ui_yida.FilterActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         });
         findViewById(R.id.btn_2).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+            startActivity(intent);
+        });
+        findViewById(R.id.btn_3).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FilterActivity.class);
             startActivity(intent);
         });
 

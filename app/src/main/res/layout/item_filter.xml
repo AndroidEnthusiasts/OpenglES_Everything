@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp65"
+    android:layout_height="@dimen/dp85">
+
+    <ImageView
+        android:id="@+id/ifa_color_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/ifa_select_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/filter_kuang_blue">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/ifa_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#cc15182A"
+        android:gravity="center"
+        android:paddingTop="@dimen/dp3"
+        android:paddingBottom="@dimen/dp3"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp13" />
+
+</RelativeLayout>

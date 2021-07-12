@@ -24,8 +24,6 @@ public class CameraView extends GLSurfaceView implements GLSurfaceView.Renderer 
     private int width;
     private int height;
 
-
-
     public CameraView(Context context) {
         super(context);
         initEGL(context);
