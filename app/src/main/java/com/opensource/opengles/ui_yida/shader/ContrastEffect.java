@@ -1,6 +1,6 @@
 package com.opensource.opengles.ui_yida.shader;
 
-import x.com.opengl.shader.ShaderInterface;
+
 
 /**
  * 对比度调整

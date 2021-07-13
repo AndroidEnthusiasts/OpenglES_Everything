@@ -3,7 +3,7 @@ package com.opensource.opengles.ui_yida.shader;
 import java.util.Date;
 import java.util.Random;
 
-import x.com.opengl.shader.ShaderInterface;
+
 
 /**
  * lomo相机样式

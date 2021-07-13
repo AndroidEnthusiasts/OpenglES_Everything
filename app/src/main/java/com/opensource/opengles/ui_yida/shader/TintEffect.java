@@ -3,7 +3,7 @@ package com.opensource.opengles.ui_yida.shader;
 
 import android.graphics.Color;
 
-import x.com.opengl.shader.ShaderInterface;
+
 
 /**
  * 用指定颜色给视频着色

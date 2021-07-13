@@ -1,6 +1,5 @@
 package com.opensource.opengles.ui_yida.shader;
 
-import x.com.opengl.shader.ShaderInterface;
 
 /**
  * Attempts to auto-fix the video based on histogram equalization.

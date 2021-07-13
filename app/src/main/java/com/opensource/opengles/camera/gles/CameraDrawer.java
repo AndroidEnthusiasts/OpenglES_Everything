@@ -9,6 +9,7 @@ import android.opengl.GLSurfaceView;
 
 import com.opensource.opengles.camera.gles.fliter.AFilter;
 import com.opensource.opengles.camera.gles.fliter.OesFilter2;
+import com.opensource.opengles.camera.gles.fliter.WarmColdTones;
 import com.opensource.opengles.utils.Gl2Utils;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -36,7 +37,8 @@ public class CameraDrawer implements GLSurfaceView.Renderer {
     private float[] mModelMatrix = new float[16];
 
     public CameraDrawer(Resources res) {
-        mOesFilter = new OesFilter2(res);
+//        mOesFilter = new OesFilter2(res);
+        mOesFilter = new WarmColdTones(res);
     }
 
     //需要提供给Camera的surfaceTextureView

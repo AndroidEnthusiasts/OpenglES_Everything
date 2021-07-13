@@ -3,7 +3,7 @@ package com.opensource.opengles.ui_yida.shader;
 import java.util.Date;
 import java.util.Random;
 
-import x.com.opengl.shader.ShaderInterface;
+
 
 /**
  * 胶片颗粒效果???

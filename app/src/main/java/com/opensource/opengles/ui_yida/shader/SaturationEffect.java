@@ -1,6 +1,6 @@
 package com.opensource.opengles.ui_yida.shader;
 
-import x.com.opengl.shader.ShaderInterface;
+
 
 /**
  * 调整颜色饱和度，有莫名的蓝色色块

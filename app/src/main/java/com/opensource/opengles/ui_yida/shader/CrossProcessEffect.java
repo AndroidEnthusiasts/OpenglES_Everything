@@ -1,6 +1,6 @@
 package com.opensource.opengles.ui_yida.shader;
 
-import x.com.opengl.shader.ShaderInterface;
+
 
 /**
  * 去蓝光滤镜

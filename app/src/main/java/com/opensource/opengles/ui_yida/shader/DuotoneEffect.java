@@ -2,7 +2,7 @@ package com.opensource.opengles.ui_yida.shader;
 
 import android.graphics.Color;
 
-import x.com.opengl.shader.ShaderInterface;
+
 
 /**
  * 只有两种颜色
