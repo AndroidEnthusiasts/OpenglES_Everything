@@ -32,6 +32,9 @@
             android:theme="@style/Theme.Design.NoActionBar"/>
         <activity android:name=".ui_yida.FilterActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
+        <activity android:name=".activity.PaintActivity"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
     </application>
 
 </manifest>

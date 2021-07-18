@@ -7,11 +7,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.opensource.opengles.shape.CircleShapeRender;
 import com.opensource.opengles.shape.CubeShapeRender;
-import com.opensource.opengles.shape.SimpleShapeRender;
-import com.opensource.opengles.shape.TriangleShapeRender;
-import com.opensource.opengles.texture.Texture2DShapeRender;
 
 public class ViewActivity extends AppCompatActivity {
     private GLSurfaceView glSurfaceView;

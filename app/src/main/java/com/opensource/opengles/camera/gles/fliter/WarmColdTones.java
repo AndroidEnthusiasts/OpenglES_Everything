@@ -41,7 +41,7 @@ public class WarmColdTones extends AFilter{
         super.onSetExpandData();
         GLES20.glUniformMatrix4fv(mHCoordMatrix, 1, false, mCoordMatrix, 0);
         //设置自己的颜色矩阵
-        GLES20.glUniform3fv(mUChangeColor, 1, coolFilterColorData, 0);
+        GLES20.glUniform3fv(mUChangeColor, 1, warmFilterColorData, 0);
     }
 
     @Override
