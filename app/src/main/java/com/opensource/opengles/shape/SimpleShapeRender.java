@@ -2,9 +2,8 @@ package com.opensource.opengles.shape;
 
 import android.content.Context;
 import android.opengl.GLES20;
-import android.opengl.GLES30;
 
-import com.opensource.opengles.R;
+import com.opensource.opengles.base.BaseViewGLRender;
 import com.opensource.opengles.common.Constant;
 import com.opensource.opengles.render.GLESUtils;
 
@@ -20,7 +19,7 @@ import static com.opensource.opengles.common.Constant.BYTES_PER_FLOAT;
 /***
  * 绘制基本的点和线、以及三角形
  */
-public class SimpleShapeRender extends BaseViewGLRender  {
+public class SimpleShapeRender extends BaseViewGLRender {
     private static final String Vertext_Shader_file = "shape/vertex_simple_shader.glsl";
     private static final String Fragment_Shader_file = "shape/fragment_simple_shader.glsl";
     private static final String A_POSITION = "aPosition";

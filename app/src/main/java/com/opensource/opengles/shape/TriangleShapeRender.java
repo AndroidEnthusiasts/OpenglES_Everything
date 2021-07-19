@@ -2,8 +2,8 @@ package com.opensource.opengles.shape;
 
 import android.content.Context;
 import android.opengl.GLES20;
-import android.opengl.GLSurfaceView;
 
+import com.opensource.opengles.base.BaseViewGLRender;
 import com.opensource.opengles.common.Constant;
 import com.opensource.opengles.render.GLESUtils;
 
@@ -17,7 +17,7 @@ import javax.microedition.khronos.opengles.GL10;
 /***
  * 绘制基本的三角形
  */
-public class TriangleShapeRender extends BaseViewGLRender  {
+public class TriangleShapeRender extends BaseViewGLRender {
     private static final String Vertext_Shader_file = "shape/triangle_vetext_shader.glsl";
     private static final String Fragment_Shader_file = "shape/triangle_fragment_shader.glsl";
     private static final String A_POSITION = "aPosition";

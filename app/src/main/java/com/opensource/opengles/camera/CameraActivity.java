@@ -31,7 +31,7 @@ public class CameraActivity extends AppCompatActivity {
     private static final int REQUEST_CAMERA_PERMISSION = 1;
     public CameraView mCameraView;
     private ViewGroup mContainer;
-    Camera
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

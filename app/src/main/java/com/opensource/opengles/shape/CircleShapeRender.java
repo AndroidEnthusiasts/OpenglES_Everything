@@ -5,6 +5,7 @@ import android.graphics.Point;
 import android.opengl.GLES20;
 import android.opengl.Matrix;
 
+import com.opensource.opengles.base.BaseViewGLRender;
 import com.opensource.opengles.common.Constant;
 import com.opensource.opengles.render.GLESUtils;
 import com.opensource.opengles.shape.base.Circle;
@@ -19,7 +20,7 @@ import javax.microedition.khronos.opengles.GL10;
 /***
  * 绘制一个圆
  */
-public class CircleShapeRender extends BaseViewGLRender{
+public class CircleShapeRender extends BaseViewGLRender {
     /**
      * 更新shader的位置
      */

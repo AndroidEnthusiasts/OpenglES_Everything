@@ -11,7 +11,7 @@ import android.util.Log;
 import com.opensource.opengles.R;
 import com.opensource.opengles.common.Constant;
 import com.opensource.opengles.render.GLESUtils;
-import com.opensource.opengles.shape.BaseViewGLRender;
+import com.opensource.opengles.base.BaseViewGLRender;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

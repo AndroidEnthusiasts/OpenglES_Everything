@@ -6,6 +6,7 @@ import android.opengl.GLES30;
 import android.opengl.Matrix;
 
 import com.opensource.opengles.R;
+import com.opensource.opengles.base.BaseViewGLRender;
 import com.opensource.opengles.common.Constant;
 import com.opensource.opengles.render.GLESUtils;
 import com.opensource.opengles.utils.TextureUtils;
@@ -227,7 +228,7 @@ public class CubeShapeRender extends BaseViewGLRender {
 
         //加载纹理
         int[] resList = {R.drawable.test,R.drawable.cat,R.drawable.test,R.drawable.cat,R.drawable.test,R.drawable.cat};
-        textureIds = TextureUtils.loadTextures(context,resList);
+        textureIds = TextureUtils.loadTexture(context,resList);
     }
 
     @Override
