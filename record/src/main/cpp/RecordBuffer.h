@@ -5,6 +5,7 @@
 #ifndef OPENGLES_RECORDBUFFER_H
 #define OPENGLES_RECORDBUFFER_H
 
+class RecordBuffer {
 public:
     short **buffer;
     int index = -1;

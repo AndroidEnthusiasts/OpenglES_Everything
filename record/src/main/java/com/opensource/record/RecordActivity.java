@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.opensource.record.camera.CameraPreviewView;
+import com.opensource.record.encodec.BaseMediaEncoder;
+import com.opensource.record.encodec.MediaEncoder;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +27,7 @@ public class RecordActivity extends AppCompatActivity {
     private CameraPreviewView cameraView;
     private Button btnRecord;
 
-//    private MediaEncoder mediaEncodec;
+    private MediaEncoder mediaEncodec;
     private boolean finish = false;
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault());
 
@@ -38,34 +40,36 @@ public class RecordActivity extends AppCompatActivity {
         btnRecord.setText("正在录制...");
         btnRecord.setTextColor(Color.RED);
         //准备写入数据
-//        if (mediaEncodec == null) {
-//            Log.d(TAG, "textureid is " + cameraView.getTextureId());
-//            try {
-//                File parent = new File(Environment.getExternalStorageDirectory().getPath());
-//                if (!parent.exists()) {
-//                    parent.mkdirs();
-//                }
-//                String videoPath = Environment.getExternalStorageDirectory().getPath() + "/video" + simpleDateFormat.format(new Date())
-//                        + ".mp4";
-//                File file = new File(videoPath);
-//                if (!file.exists()) {
-//                    file.createNewFile();
-//                }
-//                //获得OpenGL的FBO渲染的纹理id，通过共享纹理id的方式将图像数据写入MediaCodec
-//               //todo
-//
-//            } catch (IOException e) {
-//                Log.d(TAG, "IOException is : " + e);
-//            }
-//        }
-//        startRecord();
+        if (mediaEncodec == null) {
+            Log.d(TAG, "textureid is " + cameraView.getTextureId());
+            try {
+                File parent = new File(Environment.getExternalStorageDirectory().getPath());
+                if (!parent.exists()) {
+                    parent.mkdirs();
+                }
+                String videoPath = Environment.getExternalStorageDirectory().getPath() + "/video" + simpleDateFormat.format(new Date())
+                        + ".mp4";
+                File file = new File(videoPath);
+                if (!file.exists()) {
+                    file.createNewFile();
+                }
+                //获得OpenGL的FBO渲染的纹理id，通过共享纹理id的方式将图像数据写入MediaCodec
+                mediaEncodec = new MediaEncoder(RecordActivity.this,cameraView.getTextureId());
+                mediaEncodec.initEncoder(cameraView.getEglContext(),videoPath,720,1080,441000);
+                mediaEncodec.setOnMediaInfoListener(times -> Log.d(TAG, "time is : " + times));
+                mediaEncodec.startRecord();
+            } catch (IOException e) {
+                Log.d(TAG, "IOException is : " + e);
+            }
+        }
+        startRecord();
     }
 
     private void stop() {
-//        stopRecord();
+        stopRecord();
         finish = true;
         //停止写入数据
-//        mediaEncodec.stopRecord();
+        mediaEncodec.stopRecord();
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -73,7 +77,7 @@ public class RecordActivity extends AppCompatActivity {
                 btnRecord.setTextColor(Color.BLACK);
             }
         });
-//        mediaEncodec = null;
+        mediaEncodec = null;
     }
 
     /**
@@ -87,14 +91,13 @@ public class RecordActivity extends AppCompatActivity {
             return;
         }
         Log.d("OpenSlDemo", "onPcmDataInput pcmData size:" + pcmData.length);
-//        if (mediaEncodec != null) {
-//            mediaEncodec.putPcmData(pcmData, pcmData.length);
-//        }
+        if (mediaEncodec != null) {
+            mediaEncodec.putPcmData(pcmData, pcmData.length);
+        }
     }
 
-//    native void startRecord();
-//
-//    native void stopRecord();
+    native void startRecord();
+    native void stopRecord();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -106,7 +109,11 @@ public class RecordActivity extends AppCompatActivity {
     }
 
     public void record(View view) {
-
+        if (mediaEncodec == null) {
+            start();
+        } else {
+            stop();
+        }
     }
 
     @Override

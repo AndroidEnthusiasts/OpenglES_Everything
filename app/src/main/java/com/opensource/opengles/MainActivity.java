@@ -3,6 +3,7 @@ package com.opensource.opengles;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.SurfaceTexture;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Display;
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, PaintActivity.class);
             startActivity(intent);
         });
+
+
 
     }
 }
