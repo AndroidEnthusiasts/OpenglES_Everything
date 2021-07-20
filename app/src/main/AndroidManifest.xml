@@ -37,7 +37,9 @@
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity android:name=".model.ModelLoadActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
-        <activity android:name=".camera.CameraActivity2"
+        <activity android:name=".camera.CameraActivity2"/>
+
+        <activity android:name=".skybox.SkyBoxActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
     </application>
 

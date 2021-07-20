@@ -2,6 +2,7 @@ package com.opensource.opengles.camera;
 
 import android.content.Context;
 import android.graphics.SurfaceTexture;
+import android.hardware.Camera;
 import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
 import android.opengl.GLES30;
@@ -104,7 +105,8 @@ public class CameraQuarRender extends BaseCameraRenderer {
         mProgram = ShaderUtils.linkProgram(vertexShaderId, fragmentShaderId);
 
         createAndBindVideoTexture();
-        mCameraApi.open(0);
+        //TODO bug
+        mCameraApi.open( Camera.CameraInfo.CAMERA_FACING_BACK);
         mCameraApi.setPreviewTexture(mCameraTexture);
         mCameraApi.preview();
 

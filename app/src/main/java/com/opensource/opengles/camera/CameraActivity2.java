@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.opensource.opengles.R;
+import com.opensource.opengles.camera.render.TrianColorRender;
 
 public class CameraActivity2 extends AppCompatActivity {
     private static final String TAG = "CameraActivity";
@@ -32,10 +33,10 @@ public class CameraActivity2 extends AppCompatActivity {
         Log.e(TAG, "onOptionsItemSelected: itemId="+item.getItemId());
         switch (item.getItemId()){
             case 1:
-                //glSurface.setObjectRender(new TrianCamColorRender());
+                glSurface.setObjectRender(new TrianColorRender());
                 break;
             case 2:
-                //glSurface.setObjectRender(new TrianCamTextureRender());
+                //glSurface.setObjectRender(new TrianTextureRender()); //todo 大家有时间实现下
                 break;
         }
         return super.onOptionsItemSelected(item);

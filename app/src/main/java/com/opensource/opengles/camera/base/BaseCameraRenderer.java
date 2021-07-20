@@ -9,7 +9,7 @@ import java.util.List;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-//摄像头预览Render基类，主要便于在预览画面上叠加其他渲染对象
+//摄像头预览Render基类，主要便于在预览画面上叠加其他渲染对象（多个render的渲染）
 public abstract class BaseCameraRenderer implements GLSurfaceView.Renderer {
     private static final String TAG = "BaseCameraRenderer";
     private List<AbsObjectRender> objectRenders = new ArrayList<>();

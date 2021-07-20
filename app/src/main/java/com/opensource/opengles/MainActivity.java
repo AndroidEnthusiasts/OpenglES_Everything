@@ -3,16 +3,15 @@ package com.opensource.opengles;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.SurfaceTexture;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Display;
 
 import com.opensource.opengles.activity.PaintActivity;
-import com.opensource.opengles.camera.CameraActivity;
 import com.opensource.opengles.camera.CameraActivity2;
 import com.opensource.opengles.model.ModelLoadActivity;
 import com.opensource.opengles.render.ViewActivity;
+import com.opensource.opengles.skybox.SkyBoxActivity;
 import com.opensource.opengles.ui_yida.FilterActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -58,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
+        findViewById(R.id.btn_6).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SkyBoxActivity.class);
+            startActivity(intent);
+        });
 
 
     }

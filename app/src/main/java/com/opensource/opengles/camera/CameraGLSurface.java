@@ -23,7 +23,7 @@ public class CameraGLSurface extends GLSurfaceView implements SurfaceTexture.OnF
         render = new CameraQuarRender(context,this);
         setRenderer(render);
         setRenderMode(RENDERMODE_WHEN_DIRTY);
-        //render.setObjectRender(new TrianCamColorRender());
+        //render.setObjectRender(new TrianColorRender()); 默认给一个render
     }
 
     public void setObjectRender(AbsObjectRender absObjectRender){
