@@ -5,14 +5,16 @@
 
 cmake_minimum_required(VERSION 3.10.2)
 include_directories(
-        src/main/cpp/camera
-        src/main/cpp/utils
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/camera
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/utils
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/es
 )
 
 file(GLOB CAMERA_FILES
         src/main/cpp/*.cpp
         src/main/cpp/utils/*.cpp
         src/main/cpp/camera/*.cpp
+        src/main/cpp/es/*.cpp
         )
 
 add_library(CAMERA_LIB

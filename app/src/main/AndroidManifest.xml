@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".MainApplication"
@@ -33,13 +35,16 @@
             android:theme="@style/Theme.Design.NoActionBar"/>
         <activity android:name=".ui_yida.FilterActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
-        <activity android:name=".activity.PaintActivity"
+        <activity android:name=".yuv.PaintActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity android:name=".model.ModelLoadActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity android:name=".camera.CameraActivity2"/>
 
         <activity android:name=".skybox.SkyBoxActivity"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity android:name=".player.MediaPlayerActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
     </application>
 

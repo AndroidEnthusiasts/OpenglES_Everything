@@ -19,6 +19,8 @@ add_library(record-lib
         )
 
 target_link_libraries(record-lib
+        mediandk
+        OpenSLES
         EGL
         GLESv3
         log

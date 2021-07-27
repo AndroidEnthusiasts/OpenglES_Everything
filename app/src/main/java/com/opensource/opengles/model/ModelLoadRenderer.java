@@ -2,6 +2,7 @@ package com.opensource.opengles.model;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.hardware.Camera;
 import android.opengl.GLES20;
 import android.opengl.GLES30;
 import android.opengl.Matrix;
@@ -14,6 +15,8 @@ import com.opensource.opengles.base.BaseViewGLRender;
 import com.opensource.opengles.common.Constant;
 import com.opensource.opengles.render.GLESUtils;
 import com.opensource.opengles.utils.GLDataUtil;
+import com.opensource.opengles.utils.ResReadUtils;
+import com.opensource.opengles.utils.ShaderUtils;
 import com.opensource.opengles.utils.TextureUtils;
 import com.opensource.opengles.utils.model.bean.LoadObjectUtil;
 import com.opensource.opengles.utils.model.bean.ObjectBean;
@@ -39,7 +42,6 @@ public class ModelLoadRenderer extends BaseViewGLRender {
 
     private List<ObjectBean> list;
     public static final String planetDir = "planet", rockDir = "rock";
-    private int mProgramObjectId;
 
     public ModelLoadRenderer() {
         list = LoadObjectUtil.loadObject(rockDir + "/rock.obj",
@@ -50,21 +52,38 @@ public class ModelLoadRenderer extends BaseViewGLRender {
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         super.onSurfaceCreated(gl, config);
-        //获取shader
-        String vertexShaderCode = GLESUtils.readAssetShaderCode(AppCore.getInstance().getContext(), Vertext_Shader_file);
-        String fragmentShaderCode = GLESUtils.readAssetShaderCode(AppCore.getInstance().getContext(), Fragment_Shader_file);
-        //编译shader
-        int vertexShaderObjectId = GLESUtils.compileShaderCode(GLES30.GL_VERTEX_SHADER, vertexShaderCode, Constant.GLES_VERSION_3);
-        int fragmentShaderObjectId = GLESUtils.compileShaderCode(GLES30.GL_FRAGMENT_SHADER, fragmentShaderCode,Constant.GLES_VERSION_3);
+//        //获取shader
+//        String vertexShaderCode = GLESUtils.readAssetShaderCode(AppCore.getInstance().getContext(), Vertext_Shader_file);
+//        String fragmentShaderCode = GLESUtils.readAssetShaderCode(AppCore.getInstance().getContext(), Fragment_Shader_file);
+//        //编译shader
+//        int vertexShaderObjectId = GLESUtils.compileShaderCode(GLES30.GL_VERTEX_SHADER, vertexShaderCode, Constant.GLES_VERSION_3);
+//        int fragmentShaderObjectId = GLESUtils.compileShaderCode(GLES30.GL_FRAGMENT_SHADER, fragmentShaderCode,Constant.GLES_VERSION_3);
+//
+//        mProgramObjectId = GLES20.glCreateProgram();
+//        //attach
+//        GLES20.glAttachShader(mProgramObjectId, vertexShaderObjectId);
+//        GLES20.glAttachShader(mProgramObjectId, fragmentShaderObjectId);
+//        //link
+//        GLES20.glLinkProgram(mProgramObjectId);
+//        //use
+//        GLES20.glUseProgram(mProgramObjectId);
 
-        mProgramObjectId = GLES20.glCreateProgram();
-        //attach
-        GLES20.glAttachShader(mProgramObjectId, vertexShaderObjectId);
-        GLES20.glAttachShader(mProgramObjectId, fragmentShaderObjectId);
+        //编译顶点着色程序
+        String vertexShaderStr = ResReadUtils.readResource(R.raw.mode_vetext_shader);
+        int vertexShaderId = ShaderUtils.compileVertexShader(vertexShaderStr);
+        //编译片段着色程序
+        String fragmentShaderStr = ResReadUtils.readResource(R.raw.mode_fragment_shader);
+        int fragmentShaderId = ShaderUtils.compileFragmentShader(fragmentShaderStr);
+        //连接程序
+        mProgram = ShaderUtils.linkProgram(vertexShaderId, fragmentShaderId);
+        //        //attach
+        GLES20.glAttachShader(mProgram, vertexShaderId);
+        GLES20.glAttachShader(mProgram, fragmentShaderId);
         //link
-        GLES20.glLinkProgram(mProgramObjectId);
+        GLES20.glLinkProgram(mProgram);
         //use
-        GLES20.glUseProgram(mProgramObjectId);
+        GLES20.glUseProgram(mProgram);
+
     }
 
 

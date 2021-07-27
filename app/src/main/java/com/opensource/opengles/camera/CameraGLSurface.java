@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 
 import com.opensource.opengles.camera.base.AbsObjectRender;
 import com.opensource.opengles.camera.base.BaseCameraRenderer;
+import com.opensource.opengles.camera.render.TrianColorRender;
 
 
 public class CameraGLSurface extends GLSurfaceView implements SurfaceTexture.OnFrameAvailableListener {
@@ -23,7 +24,7 @@ public class CameraGLSurface extends GLSurfaceView implements SurfaceTexture.OnF
         render = new CameraQuarRender(context,this);
         setRenderer(render);
         setRenderMode(RENDERMODE_WHEN_DIRTY);
-        //render.setObjectRender(new TrianColorRender()); 默认给一个render
+        //render.setObjectRender(new TrianColorRender()); //默认给一个render
     }
 
     public void setObjectRender(AbsObjectRender absObjectRender){

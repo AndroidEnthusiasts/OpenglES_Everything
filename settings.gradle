@@ -1,3 +1,4 @@
+include ':base'
 include ':record'
 rootProject.name = "OpenGLES"
 include ':app'

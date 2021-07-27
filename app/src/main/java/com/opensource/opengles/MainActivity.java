@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Display;
 
-import com.opensource.opengles.activity.PaintActivity;
+import com.opensource.opengles.player.MediaPlayerActivity;
+import com.opensource.opengles.yuv.PaintActivity;
 import com.opensource.opengles.camera.CameraActivity2;
 import com.opensource.opengles.model.ModelLoadActivity;
 import com.opensource.opengles.render.ViewActivity;
@@ -63,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
+        findViewById(R.id.btn_7).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MediaPlayerActivity.class);
+            startActivity(intent);
+        });
 
     }
 }
